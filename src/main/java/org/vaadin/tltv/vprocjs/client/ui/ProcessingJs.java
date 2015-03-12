@@ -1,4 +1,4 @@
-package org.vaadin.tltv.vprocjs.gwt.client.ui;
+package org.vaadin.tltv.vprocjs.client.ui;
 
 /**
  * Interface containing all supported processing.js methods.

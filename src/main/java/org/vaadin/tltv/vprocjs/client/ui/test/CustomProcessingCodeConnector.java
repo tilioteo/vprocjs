@@ -1,11 +1,12 @@
-package org.vaadin.tltv.vprocjs.gwt.client.ui.test;
+package org.vaadin.tltv.vprocjs.client.ui.test;
 
-import org.vaadin.tltv.vprocjs.gwt.client.ui.ProcessingCode;
-import org.vaadin.tltv.vprocjs.gwt.client.ui.ProcessingCodeConnector;
+import org.vaadin.tltv.vprocjs.client.ui.ProcessingCode;
+import org.vaadin.tltv.vprocjs.client.ui.processingcode.ProcessingCodeConnector;
 import org.vaadin.tltv.vprocjs.test.server.CustomProcessingCodeExtension;
 
 import com.vaadin.shared.ui.Connect;
 
+@SuppressWarnings("serial")
 @Connect(CustomProcessingCodeExtension.class)
 public class CustomProcessingCodeConnector extends ProcessingCodeConnector {
 

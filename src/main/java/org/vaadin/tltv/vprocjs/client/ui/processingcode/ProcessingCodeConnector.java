@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-package org.vaadin.tltv.vprocjs.gwt.client.ui;
+package org.vaadin.tltv.vprocjs.client.ui.processingcode;
+
+import org.vaadin.tltv.vprocjs.client.ui.ProcessingCode;
+import org.vaadin.tltv.vprocjs.client.ui.VProcessing;
+import org.vaadin.tltv.vprocjs.shared.ui.processingcode.ProcessingCodeState;
 
 import com.vaadin.client.ComponentConnector;
 import com.vaadin.client.ServerConnector;
@@ -25,8 +29,8 @@ import com.vaadin.client.extensions.AbstractExtensionConnector;
  * Abstract Connector for the Java implementation of the sketches. This class
  * acts as a client-side link to the server.
  */
-public abstract class ProcessingCodeConnector extends
-        AbstractExtensionConnector {
+@SuppressWarnings("serial")
+public abstract class ProcessingCodeConnector extends AbstractExtensionConnector {
 
     private VProcessing widget;
 
@@ -34,6 +38,7 @@ public abstract class ProcessingCodeConnector extends
     protected void extend(ServerConnector target) {
         // Get the extended widget
         widget = (VProcessing) ((ComponentConnector) target).getWidget();
+        widget.setUId(getConnectorId());
     }
 
     @Override
@@ -42,10 +47,11 @@ public abstract class ProcessingCodeConnector extends
 
         ProcessingCodeState state = getState();
         VProcessing widget = getWidget();
-        widget.setUId(getConnectorId());
-        widget.setProcessingJavaCode(getProcessingJavaCode(state
-                .getProcessingJavaCodeClass()));
-        widget.stateChanged();
+        
+        if (stateChangeEvent.hasPropertyChanged("processingJavaCodeClass")) {
+        	widget.setProcessingJavaCode(getProcessingJavaCode(state.processingJavaCodeClass));
+        	widget.stateChanged();
+        }
     }
 
     /**

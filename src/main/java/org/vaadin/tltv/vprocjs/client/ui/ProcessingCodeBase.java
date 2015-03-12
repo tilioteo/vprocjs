@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.vaadin.tltv.vprocjs.gwt.client.ui;
+package org.vaadin.tltv.vprocjs.client.ui;
 
 import java.util.HashMap;
 import java.util.Map;

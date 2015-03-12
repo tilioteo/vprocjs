@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package org.vaadin.tltv.vprocjs.gwt.client.ui;
+package org.vaadin.tltv.vprocjs.client.ui;
 
 import java.util.Map;
 
 public interface ProcessingCode extends ProcessingCodeMethods {
 
-    void setProcessing(VProcessing vprocessing,
-            Map<Object, Object> sharedVariables);
+    void setProcessing(VProcessing vprocessing, Map<Object, Object> sharedVariables);
 
     void setProcessingJavascriptObject(ProcessingJavascriptObject proJsObj);
 

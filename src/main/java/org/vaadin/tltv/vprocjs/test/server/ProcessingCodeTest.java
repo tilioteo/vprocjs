@@ -1,20 +1,20 @@
 package org.vaadin.tltv.vprocjs.test.server;
 
-import org.vaadin.tltv.vprocjs.component.Processing;
-import org.vaadin.tltv.vprocjs.component.Processing.ClickEvent;
-import org.vaadin.tltv.vprocjs.component.Processing.KeyPressEvent;
-import org.vaadin.tltv.vprocjs.component.Processing.KeyPressListener;
-import org.vaadin.tltv.vprocjs.component.Processing.MouseClickListener;
-import org.vaadin.tltv.vprocjs.component.Processing.MouseEnterEvent;
-import org.vaadin.tltv.vprocjs.component.Processing.MouseEnterListener;
-import org.vaadin.tltv.vprocjs.component.Processing.MouseLeaveEvent;
-import org.vaadin.tltv.vprocjs.component.Processing.MouseLeaveListener;
-import org.vaadin.tltv.vprocjs.component.Processing.MousePressEvent;
-import org.vaadin.tltv.vprocjs.component.Processing.MousePressListener;
-import org.vaadin.tltv.vprocjs.component.Processing.MouseReleaseEvent;
-import org.vaadin.tltv.vprocjs.component.Processing.MouseReleaseListener;
-import org.vaadin.tltv.vprocjs.component.Processing.MouseWheelEvent;
-import org.vaadin.tltv.vprocjs.component.Processing.MouseWheelListener;
+import org.vaadin.tltv.vprocjs.ui.Processing;
+import org.vaadin.tltv.vprocjs.ui.Processing.ClickEvent;
+import org.vaadin.tltv.vprocjs.ui.Processing.KeyPressEvent;
+import org.vaadin.tltv.vprocjs.ui.Processing.KeyPressListener;
+import org.vaadin.tltv.vprocjs.ui.Processing.MouseClickListener;
+import org.vaadin.tltv.vprocjs.ui.Processing.MouseEnterEvent;
+import org.vaadin.tltv.vprocjs.ui.Processing.MouseEnterListener;
+import org.vaadin.tltv.vprocjs.ui.Processing.MouseLeaveEvent;
+import org.vaadin.tltv.vprocjs.ui.Processing.MouseLeaveListener;
+import org.vaadin.tltv.vprocjs.ui.Processing.MousePressEvent;
+import org.vaadin.tltv.vprocjs.ui.Processing.MousePressListener;
+import org.vaadin.tltv.vprocjs.ui.Processing.MouseReleaseEvent;
+import org.vaadin.tltv.vprocjs.ui.Processing.MouseReleaseListener;
+import org.vaadin.tltv.vprocjs.ui.Processing.MouseWheelEvent;
+import org.vaadin.tltv.vprocjs.ui.Processing.MouseWheelListener;
 
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
@@ -42,6 +42,7 @@ import com.vaadin.ui.Window;
  * @author Tltv
  * 
  */
+@SuppressWarnings("serial")
 public class ProcessingCodeTest extends VerticalLayout implements
         ValueChangeListener, MouseClickListener, MousePressListener,
         MouseReleaseListener, KeyPressListener, MouseEnterListener,

@@ -5,12 +5,12 @@
 	<groupId>org.vaadin.tltv</groupId>
 	<artifactId>vprocjs</artifactId>
 	<packaging>jar</packaging>
-	<version>0.2.1</version>
+	<version>0.2.1-mod</version>
 	<name>ProcessingJs for Vaadin 7</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>7.0.1</vaadin.version>
+		<vaadin.version>7.1.10</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 	</properties>
 	<repositories>
@@ -164,7 +164,7 @@
 							<Implementation-Version>0.2.1</Implementation-Version>
 
 							<!-- Comma-separated list of widgetsets in the package -->
-							<Vaadin-Widgetsets>org.vaadin.tltv.vprocjs.gwt.ProcessingJsWidgetset</Vaadin-Widgetsets>
+							<Vaadin-Widgetsets>org.vaadin.tltv.vprocjs.ProcessingJsWidgetset</Vaadin-Widgetsets>
 						</manifestEntries>
 					</archive>
 				</configuration>

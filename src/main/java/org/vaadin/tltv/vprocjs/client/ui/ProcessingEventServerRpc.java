@@ -1,4 +1,4 @@
-package org.vaadin.tltv.vprocjs.gwt.client.ui;
+package org.vaadin.tltv.vprocjs.client.ui;
 
 import com.vaadin.shared.communication.ServerRpc;
 

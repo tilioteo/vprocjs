@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<module>
+	<!--
+	    This file is automatically updated based on new dependencies by the
+	    goal "vaadin:update-widgetset".
+	-->
+
+	<!-- Inherit DefaultWidgetSet -->
+	<inherits name="com.vaadin.DefaultWidgetSet" /> 
+    
+	<source path="client" />
+	<source path="shared" />
+
+</module>

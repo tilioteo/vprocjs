@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package org.vaadin.tltv.vprocjs.component;
+package org.vaadin.tltv.vprocjs.ui;
 
-import org.vaadin.tltv.vprocjs.gwt.client.ui.ProcessingCodeState;
+import org.vaadin.tltv.vprocjs.shared.ui.processingcode.ProcessingCodeState;
 
 import com.vaadin.server.AbstractExtension;
 
@@ -26,9 +26,11 @@ import com.vaadin.server.AbstractExtension;
  * server-side link to the client-side code connector.
  * 
  */
+@SuppressWarnings("serial")
 public abstract class ProcessingCodeExtension extends AbstractExtension {
 
-    private Processing owner;
+    @SuppressWarnings("unused")
+	private Processing owner;
     private String processingJavaCodeClass;
 
     public void extend(Processing owner) {
@@ -53,7 +55,7 @@ public abstract class ProcessingCodeExtension extends AbstractExtension {
      */
     public void setProcessingJavaCodeClass(String processingJavaCodeClass) {
         this.processingJavaCodeClass = processingJavaCodeClass;
-        getState().setProcessingJavaCodeClass(this.processingJavaCodeClass);
+        getState().processingJavaCodeClass = this.processingJavaCodeClass;
     }
 
     @Override

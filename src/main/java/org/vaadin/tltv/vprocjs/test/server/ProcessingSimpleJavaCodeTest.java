@@ -1,7 +1,7 @@
 package org.vaadin.tltv.vprocjs.test.server;
 
-import org.vaadin.tltv.vprocjs.component.Processing;
-import org.vaadin.tltv.vprocjs.gwt.client.ui.test.ProcessingCodeImplTest;
+import org.vaadin.tltv.vprocjs.client.ui.test.ProcessingCodeImplTest;
+import org.vaadin.tltv.vprocjs.ui.Processing;
 
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
@@ -13,6 +13,7 @@ import com.vaadin.ui.VerticalLayout;
  * @author Tltv
  * 
  */
+@SuppressWarnings("serial")
 public class ProcessingSimpleJavaCodeTest extends VerticalLayout {
 
     public ProcessingSimpleJavaCodeTest() {
