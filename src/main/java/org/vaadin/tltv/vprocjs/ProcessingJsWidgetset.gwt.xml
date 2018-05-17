@@ -10,9 +10,5 @@
     
 	<source path="client" />
 	<source path="shared" />
-
-
-    <inherits name="org.vaadin.tltv.vprocjs.gwt.ProcessingJsWidgetset" />
-
-    <inherits name="com.vaadin.v7.Vaadin7WidgetSet" />
+    
 </module>

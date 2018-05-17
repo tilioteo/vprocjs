@@ -6,17 +6,17 @@
 	<groupId>org.vaadin.tltv</groupId>
 	<artifactId>vprocjs</artifactId>
 	<packaging>jar</packaging>
-	<version>3.0.0</version>
+	<version>0.3.0-mod</version>
 	<name>ProcessingJs for Vaadin 7</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>8.0.6</vaadin.version>
+		<vaadin.version>7.7.13</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 		<jetty.plugin.version>9.3.9.v20160517</jetty.plugin.version>
 		<vaadin.widgetset.mode>local</vaadin.widgetset.mode>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.target>1.7</maven.compiler.target>
 		<!-- ZIP Manifest fields -->
 		<Implementation-Version>${project.version}</Implementation-Version>
 		<!-- Must not change this because of the Directory -->
@@ -79,19 +79,6 @@
 					<artifactId>apache-jsp</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-compatibility-server</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-compatibility-client</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-compatibility-shared</artifactId>
 		</dependency>
 		
 		<dependency>
