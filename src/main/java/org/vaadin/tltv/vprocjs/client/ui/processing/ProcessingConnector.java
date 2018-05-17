@@ -17,137 +17,46 @@
 package org.vaadin.tltv.vprocjs.client.ui.processing;
 
 import org.vaadin.tltv.vprocjs.client.ui.VProcessing;
-import org.vaadin.tltv.vprocjs.shared.ui.processing.ProcessingServerRpc;
 import org.vaadin.tltv.vprocjs.shared.ui.processing.ProcessingState;
 import org.vaadin.tltv.vprocjs.ui.Processing;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.dom.client.KeyPressEvent;
-import com.google.gwt.event.dom.client.KeyPressHandler;
-import com.google.gwt.event.dom.client.KeyUpEvent;
-import com.google.gwt.event.dom.client.KeyUpHandler;
-import com.google.gwt.event.dom.client.MouseDownEvent;
-import com.google.gwt.event.dom.client.MouseDownHandler;
-import com.google.gwt.event.dom.client.MouseOutEvent;
-import com.google.gwt.event.dom.client.MouseOutHandler;
-import com.google.gwt.event.dom.client.MouseOverEvent;
-import com.google.gwt.event.dom.client.MouseOverHandler;
-import com.google.gwt.event.dom.client.MouseUpEvent;
-import com.google.gwt.event.dom.client.MouseUpHandler;
-import com.google.gwt.event.dom.client.MouseWheelEvent;
-import com.google.gwt.event.dom.client.MouseWheelHandler;
 import com.vaadin.client.communication.StateChangeEvent;
 import com.vaadin.client.ui.AbstractComponentConnector;
 import com.vaadin.shared.ui.Connect;
 
 @SuppressWarnings("serial")
 @Connect(Processing.class)
-public class ProcessingConnector extends AbstractComponentConnector implements ClickHandler,
-		MouseWheelHandler, MouseUpHandler, MouseDownHandler, MouseOutHandler,
-		MouseOverHandler, KeyPressHandler, KeyUpHandler {
+public class ProcessingConnector extends AbstractComponentConnector {
 
-    /*@Override
-    protected Widget createWidget() {
-        VProcessing widget = GWT.create(VProcessing.class);
-        return widget;
-    }*/
-
-    @Override
+	@Override
 	protected void init() {
 		super.init();
-		
+
 		VProcessing widget = getWidget();
-        widget.setUId(getConnectorId());
-		
-		widget.addClickHandler(this);
-		widget.addMouseUpHandler(this);
-		widget.addMouseDownHandler(this);
-		widget.addMouseOutHandler(this);
-		widget.addMouseOverHandler(this);
-		widget.addMouseWheelHandler(this);
-		widget.addKeyPressHandler(this);
-		widget.addKeyUpHandler(this);
-
-    }
+		widget.setUId(getConnectorId());
+	}
 
 	@Override
-    public void onStateChanged(StateChangeEvent stateChangeEvent) {
-        super.onStateChanged(stateChangeEvent);
+	public void onStateChanged(StateChangeEvent stateChangeEvent) {
+		super.onStateChanged(stateChangeEvent);
 
-        ProcessingState state = getState();
-        VProcessing widget = getWidget();
-		
-        if (stateChangeEvent.hasPropertyChanged("processingCode")) {
+		ProcessingState state = getState();
+		VProcessing widget = getWidget();
+
+		if (stateChangeEvent.hasPropertyChanged("processingCode")) {
 			widget.setProcessingCode(state.processingCode);
-	        widget.stateChanged();
-		}
-    }
-
-    @Override
-    public VProcessing getWidget() {
-        return (VProcessing) super.getWidget();
-    }
-
-    @Override
-    public ProcessingState getState() {
-        return (ProcessingState) super.getState();
-    }
-
-	@Override
-	public void onKeyUp(KeyUpEvent event) {
-		if (getState().keyReleaseListened) {
-			getRpcProxy(ProcessingServerRpc.class).keyRelease();
+			widget.stateChanged();
 		}
 	}
 
 	@Override
-	public void onKeyPress(KeyPressEvent event) {
-		if (getState().keyPressListened) {
-			getRpcProxy(ProcessingServerRpc.class).keyPress(event.getCharCode());
-		}
+	public VProcessing getWidget() {
+		return (VProcessing) super.getWidget();
 	}
 
 	@Override
-	public void onMouseOver(MouseOverEvent event) {
-		if (getState().mouseEnterListened) {
-			getRpcProxy(ProcessingServerRpc.class).mouseEnter();
-		}
+	public ProcessingState getState() {
+		return (ProcessingState) super.getState();
 	}
 
-	@Override
-	public void onMouseOut(MouseOutEvent event) {
-		if (getState().mouseLeaveListened) {
-			getRpcProxy(ProcessingServerRpc.class).mouseLeave();
-		}
-	}
-
-	@Override
-	public void onMouseDown(MouseDownEvent event) {
-		if (getState().mousePressListened) {
-			getRpcProxy(ProcessingServerRpc.class).mousePress(event.getX(), event.getY());
-		}
-	}
-
-	@Override
-	public void onMouseUp(MouseUpEvent event) {
-		if (getState().mouseReleaseListened) {
-			getRpcProxy(ProcessingServerRpc.class).mouseRelease(event.getX(), event.getY());
-		}
-	}
-
-	@Override
-	public void onMouseWheel(MouseWheelEvent event) {
-		if (getState().mouseWheelListened) {
-			boolean up = event.isNorth();
-			getRpcProxy(ProcessingServerRpc.class).mouseWheel(up, event.getDeltaY());
-		}
-	}
-
-	@Override
-	public void onClick(ClickEvent event) {
-		if (getState().mouseClickListened) {
-			getRpcProxy(ProcessingServerRpc.class).click();
-		}
-	}
 }
